@@ -1,41 +1,48 @@
 *{box-sizing:border-box}
 
 :root{
-  --paper:#f1efe8;
-  --ink:#111;
-  --muted:#77736c;
-  --rule:#d0ccc2;
+  --bg:#f3f0e8;
+  --alt:#ebe7dc;
+  --fg:#171613;
+  --muted:#746f66;
+  --line:#cbc5b8;
+  --line-strong:#938b7c;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:Arial,Helvetica,sans-serif;
+  --max:1180px;
 }
 
 html{scroll-behavior:smooth}
 
 body{
   margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--sans);
   -webkit-font-smoothing:antialiased;
 }
 
-a{color:inherit;text-decoration:none}
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
 .page{
-  width:min(1180px,calc(100% - 48px));
+  width:min(var(--max),calc(100% - 48px));
   margin:0 auto;
 }
 
-.nav{
-  height:88px;
+header{
+  height:84px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  border-bottom:1px solid var(--rule);
+  border-bottom:1px solid var(--line);
 }
 
 .brand{
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:-.02em;
+  font-family:var(--serif);
+  font-size:16px;
 }
 
 nav{
@@ -43,8 +50,15 @@ nav{
   gap:24px;
 }
 
+nav a,
+.label{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
 nav a{
-  font-size:12px;
   color:var(--muted);
 }
 
@@ -53,90 +67,122 @@ nav a{
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
-  padding:88px 0 68px;
-  border-bottom:1px solid var(--rule);
+  padding:88px 0 70px;
+  border-bottom:1px solid var(--line);
 }
 
-.eyebrow,.label{
-  margin:0;
+.label{
+  margin:0 0 28px;
   color:var(--muted);
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.16em;
 }
-
-.eyebrow{margin-bottom:28px}
 
 h1{
+  max-width:1080px;
   margin:0;
-  max-width:1100px;
-  font-size:clamp(64px,12vw,162px);
-  font-weight:500;
-  line-height:.82;
-  letter-spacing:-.075em;
+  font-family:var(--serif);
+  font-size:clamp(66px,11vw,150px);
+  font-weight:400;
+  line-height:.88;
+  letter-spacing:-.06em;
 }
 
 .lead{
-  margin:50px 0 0;
-  width:min(780px,100%);
-  font-size:clamp(20px,2.5vw,34px);
-  line-height:1.13;
-  letter-spacing:-.035em;
+  max-width:700px;
+  margin:48px 0 0;
+  font-family:var(--serif);
+  font-size:clamp(24px,3vw,40px);
+  line-height:1.08;
+  letter-spacing:-.025em;
 }
 
 .section{
   display:grid;
   grid-template-columns:190px minmax(0,1fr);
   gap:48px;
-  padding:84px 0;
-  border-bottom:1px solid var(--rule);
+  padding:82px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.section>.label{
+  margin:5px 0 0;
 }
 
 .copy{
-  width:min(790px,100%);
-  font-size:clamp(20px,2vw,27px);
-  line-height:1.35;
-  letter-spacing:-.025em;
+  max-width:700px;
+  font-family:var(--serif);
+  font-size:clamp(21px,2vw,28px);
+  line-height:1.42;
 }
 
 .copy p{
   margin:0 0 1em;
 }
 
-.links{
-  width:min(790px,100%);
-  border-top:1px solid var(--rule);
+.link-list{
+  max-width:700px;
+  border-top:1px solid var(--line-strong);
 }
 
-.links a{
+.link-list a{
+  min-height:66px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  min-height:68px;
-  border-bottom:1px solid var(--rule);
-  font-size:17px;
-  transition:padding-left .15s ease;
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
 
-.links a:hover{padding-left:8px}
-.links a span:last-child{color:var(--muted)}
+.link-list a span:last-child{
+  color:var(--muted);
+}
 
 footer{
-  height:110px;
+  min-height:104px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   color:var(--muted);
-  font-size:11px;
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
 }
 
 @media(max-width:720px){
-  .page{width:calc(100% - 24px)}
-  .nav{height:70px}
-  nav{gap:14px}
-  .hero{min-height:60vh;padding:58px 0 44px}
-  h1{font-size:clamp(56px,20vw,96px)}
-  .lead{margin-top:34px}
-  .section{grid-template-columns:1fr;gap:18px;padding:54px 0}
-  .copy{font-size:19px}
+  .page{
+    width:calc(100% - 24px);
+  }
+
+  header{
+    height:68px;
+  }
+
+  nav{
+    gap:14px;
+  }
+
+  .hero{
+    min-height:60vh;
+    padding:58px 0 44px;
+  }
+
+  h1{
+    font-size:clamp(58px,19vw,94px);
+  }
+
+  .lead{
+    margin-top:34px;
+    font-size:25px;
+  }
+
+  .section{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:52px 0;
+  }
+
+  .copy{
+    font-size:20px;
+  }
 }
