@@ -1,0 +1,30 @@
+# Mustafa Eren CEN
+
+> Artificial Intelligence Engineer based in Ankara, Türkiye.
+
+Main site:
+https://mstfcen.com/
+
+AI services in Ankara:
+https://mstfcen.com/ankara-yapay-zeka-danismanligi/
+
+Topics:
+- Artificial Intelligence Engineering
+- Machine Learning
+- Deep Learning
+- Computer Vision
+- LLM applications
+- AI automation
+- Python
+- OpenCV
+- TensorFlow
+- scikit-learn
+- Java / Spring Boot
+- Local-first AI systems
+- Software prototyping
+
+Public GitHub:
+https://github.com/mstfcen
+
+Contact:
+cenerenmustafa@gmail.com
