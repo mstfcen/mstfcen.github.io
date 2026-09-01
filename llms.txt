@@ -15,7 +15,7 @@ Focus:
 - Computer vision
 - Python
 - Local-first AI
-- Software prototyping
+- Software systems
 
 GitHub:
 https://github.com/mstfcen
